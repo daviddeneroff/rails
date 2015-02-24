@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Excusable</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+    <a href="/users/<%= session[:user_id] %>">Profile</a> |
+    <a href="/excuses">Excuses</a> |
+    <a href="/excuses/new">Make Excuse</a> |
+    <%= link_to("Logout", logout_path, method: "delete") %>
+  </nav>
+<%= yield %>
+
+</body>
+</html>

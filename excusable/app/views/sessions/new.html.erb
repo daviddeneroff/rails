@@ -1,0 +1,30 @@
+<br>
+<br>
+
+ <table class="home-page">
+  <tr>
+    <td>
+      <div id="log">
+        <p id="login">Login here</p>
+        <div class="login">
+ <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.text_field :username %>
+    <%= f.text_field :password %>
+    <%= f.submit "Log in"%>
+  <% end %></div>
+</div>
+    </td>
+    <td>
+      <div id="sign">
+        <p id="signup">Sign up Here</p>
+  <div class="signup">
+  <%= form_for(:session, url: signup_path, method: "post") do |f| %>
+    <%= f.text_field :username %>
+    <%= f.text_field :password %>
+    <%= f.text_field :password_confirmation %>
+    <%= f.submit "Sign in"%>
+  <% end %></div>
+  </div>
+    </td>
+  </tr>
+</table>

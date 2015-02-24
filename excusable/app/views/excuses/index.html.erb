@@ -1,0 +1,14 @@
+<br>
+<br>
+<br>
+
+<h2 class="excuses-header">Check out your cohortmate's excuses below...</h2>
+
+<% @excuses.each do |excuse|%>
+  <a class="main-excuses" href="/excuses/<%=excuse.id%>"><%= excuse.title %> | <%= excuse.user.username %></a>
+  <div class="votes-center">Vote Count:<span class="vote_count"><%=excuse.votes.count%></span><br>
+  <%= excuse.content %></div>
+
+  <br><br>
+<% end %>
+

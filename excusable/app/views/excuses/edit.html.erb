@@ -1,0 +1,7 @@
+<br>
+
+<%= form_for @excuse do |f| %>
+  Title<%= f.text_field :title %><br>
+  Content<%= f.text_field :content, :size => 100 %><br>
+  <%= f.submit "Create" %>
+<% end %>

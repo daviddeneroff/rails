@@ -1,0 +1,19 @@
+<br>
+<br>
+
+<h1>Welcome back <%= @user.username %></h1>
+
+
+    <a class="fix-excuses" href="/users/<%= @user.id %>/edit">Update Your Account</a>
+    <%= link_to("Delete Account", user_path, method: "delete") %>
+
+
+<h3 class="excuses-header">Here are all of your excuses. Check out the comments and votes to see what people think!!</h3>
+<% @user.excuses.each do |excuse| %>
+Votes: <%= excuse.votes.count %><br>
+  <%= excuse.title %><br>
+  <%= excuse.content %><br>
+  <% excuse.comments.each do |comment| %>
+    <%= comment.content %> by: <%= comment.user.username %><br>
+  <% end %>
+<% end %>

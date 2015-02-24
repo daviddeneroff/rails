@@ -1,0 +1,29 @@
+Votes: <%= @excuse.votes.count %><br>
+<div class="verboden">
+  <p>Hey, you can't say that here!!</p>
+</div>
+
+<a class="excuse" href="#">Vote</a> | Count:<span class="vote_count"><%=@excuse.votes.count%></span><br>
+<input class="find-excuse" value="<%=@excuse.id%>" type="hidden">
+<%= @excuse.title %><br>
+<%= @excuse.content %><br>
+
+<h3 class="single-btn">Comments</h3>
+  <h5 class="single-btn">Have something to say? Type it below</h5>
+    ######################
+    <div>
+      <form class="ajax_comment" action="/comment/<%= @excuse.id %>/create" method="POST">
+        Content: <br>
+        <textarea class="hello" name="comment[content]" cols="30" rows="3"></textarea><br>
+        <input class="find-id" value="<%=@excuse.id%>" type="hidden">
+        <input type="submit" value="Make Comment">
+      </form>
+    </div>
+######################
+  <div class="all-comments">
+    <% @excuse.comments.each do |comment| %>
+      <p class="single-btn"><%= comment.content %> by: <%= comment.user.username %></p>
+
+    <% end %>
+
+  </div>
